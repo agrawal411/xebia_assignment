@@ -2,57 +2,51 @@ package com.xebia.retailstore.bean;
 
 import java.util.Date;
 
+import com.xebia.retailstore.util.UserType;
+
 /*
  * Class to register to customer to the system with mobile number.
  */
-public class Customer {
+public class Customer extends User{
 	
-	private String name;
-	private String mobileNo;
+	private long userId;
 	private Date registrationDate;
-	private boolean isEmployee;
-	private boolean isAffiliated;
+	private String customerCategory;
 	
-	public Customer() {}
-	
-	public Customer(String name, String mobileNo, Date registrationDate, boolean isEmployee, boolean isAffiliated) {
+	public Customer() {
 		super();
-		this.name = name;
-		this.mobileNo = mobileNo;
-		this.registrationDate = registrationDate;
-		this.isEmployee = isEmployee;
-		this.isAffiliated = isAffiliated;
 	}
 	
-	public String getName() {
-		return name;
+
+	public Customer(long userId,String name,String mobileNo, Date registrationDate, String customerCategory) {
+		super(userId,name,mobileNo,UserType.CUSTOMER);
+		this.userId = userId;
+		this.registrationDate = registrationDate;
+		this.customerCategory = customerCategory;
 	}
-	public void setName(String name) {
-		this.name = name;
+
+	public long getUserId() {
+		return userId;
 	}
-	public String getMobileNo() {
-		return mobileNo;
+
+	public void setUserId(long userId) {
+		this.userId = userId;
 	}
-	public void setMobileNo(String mobileNo) {
-		this.mobileNo = mobileNo;
-	}
+
 	public Date getRegistrationDate() {
 		return registrationDate;
 	}
+
 	public void setRegistrationDate(Date registrationDate) {
 		this.registrationDate = registrationDate;
 	}
-	public boolean isEmployee() {
-		return isEmployee;
+
+	public String getCustomerCategory() {
+		return customerCategory;
 	}
-	public void setEmployee(boolean isEmployee) {
-		this.isEmployee = isEmployee;
-	}
-	public boolean isAffiliated() {
-		return isAffiliated;
-	}
-	public void setAffiliated(boolean isAffiliated) {
-		this.isAffiliated = isAffiliated;
+
+	public void setCustomerCategory(String customerCategory) {
+		this.customerCategory = customerCategory;
 	}
 	
 	

@@ -4,11 +4,13 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import com.xebia.retailstore.bean.Item;
+import com.xebia.retailstore.bean.User;
 import com.xebia.retailstore.util.ConstantHelper;
+import com.xebia.retailstore.util.Utility;
 
 public class AffiliatedDiscountCalculation implements BillCalculator{
 	
-	public double calculate(List<Item> list) {
+	public double calculate(List<Item> list, User user) {
 		double sumDiscountedItem=0;
 		double sum=0;
 		double discount=0;
@@ -21,7 +23,12 @@ public class AffiliatedDiscountCalculation implements BillCalculator{
 		
 		discount=sumDiscountedItem*(ConstantHelper.AFFILIATED_DISCOUNT)/100;
 		sum=sum-discount;
-		return sum;
+		
+		//Calculate additional discount
+		
+		Double additionlaDiscount=Utility.calculateAdditionalDiscount(sum);
+				
+		return sum-additionlaDiscount;
 	
 	}
 

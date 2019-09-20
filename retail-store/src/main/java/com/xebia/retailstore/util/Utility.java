@@ -15,6 +15,9 @@ public class Utility {
 		 * Date
 		 * currentDate=Date.from(ld.atStartOfDay().atZone(ZoneId.systemDefault()).to);
 		 */
+		if(date == null) {
+			return false;
+		}
 		boolean check=false;
 		Date currentDate=new Date();
 		
@@ -27,4 +30,11 @@ public class Utility {
 		return check;
 	}
 
+	public static double calculateAdditionalDiscount(double sum) {
+		
+		double discount=0;
+		discount=(Math.floor(sum/ConstantHelper.DISCOUNT_PER_VALUE))*ConstantHelper.PER_100_DISCOUNT;
+		
+		return discount;
+	}
 }
