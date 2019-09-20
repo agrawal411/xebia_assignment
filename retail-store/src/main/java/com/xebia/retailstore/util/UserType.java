@@ -1,5 +1,9 @@
 package com.xebia.retailstore.util;
 
+/*
+ * To restrict user type.
+ * New user can be added here and new entity class can be created for that user.
+ */
 public enum UserType {
 	
 	EMPLOYEE("Employee"),AFFILIATED_USER("Affiliated_User"),CUSTOMER("Customer");
@@ -14,7 +18,4 @@ public enum UserType {
 		return value;
 	}
 	
-	
-	
-
 }

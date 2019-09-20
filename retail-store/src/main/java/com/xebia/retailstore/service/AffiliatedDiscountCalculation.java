@@ -8,6 +8,9 @@ import com.xebia.retailstore.bean.User;
 import com.xebia.retailstore.util.ConstantHelper;
 import com.xebia.retailstore.util.Utility;
 
+/*
+ * This class implements BillCalculator interface and provide discount calculation of for user type AffiliatedUser.
+ */
 public class AffiliatedDiscountCalculation implements BillCalculator{
 	
 	public double calculate(List<Item> list, User user) {
@@ -24,8 +27,7 @@ public class AffiliatedDiscountCalculation implements BillCalculator{
 		discount=sumDiscountedItem*(ConstantHelper.AFFILIATED_DISCOUNT)/100;
 		sum=sum-discount;
 		
-		//Calculate additional discount
-		
+		//Calculate additional discount applicable for all Users- 5$ per 100$ bill		
 		Double additionlaDiscount=Utility.calculateAdditionalDiscount(sum);
 				
 		return sum-additionlaDiscount;

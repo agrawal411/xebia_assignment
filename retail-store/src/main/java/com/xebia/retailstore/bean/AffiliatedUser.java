@@ -1,8 +1,11 @@
 package com.xebia.retailstore.bean;
 
 import java.util.Date;
-
 import com.xebia.retailstore.util.UserType;
+
+/*
+ * Child class to @User. Represent user type Affiliated user.
+ */
 
 public class AffiliatedUser extends User{
 	
@@ -13,17 +16,13 @@ public class AffiliatedUser extends User{
 	public AffiliatedUser() {
 		super();
 	}
-	
-	
-	
+			
 	public AffiliatedUser(long userId,String name,String mobileNo, String firmAffiliated, Date joiningDate) {
 		super(userId,name,mobileNo,UserType.AFFILIATED_USER);
 		this.userId = userId;
 		this.firmAffiliated = firmAffiliated;
 		this.joiningDate = joiningDate;
 	}
-
-
 
 	public long getUserId() {
 		return userId;
@@ -42,10 +41,5 @@ public class AffiliatedUser extends User{
 	}
 	public void setJoiningDate(Date joiningDate) {
 		this.joiningDate = joiningDate;
-	}
-	
-	
-	
-	
-
+	}			
 }

@@ -5,7 +5,7 @@ import java.util.Date;
 import com.xebia.retailstore.util.UserType;
 
 /*
- * Class to register to customer to the system with mobile number.
+ * Child class to User. Represent user type Customer. 
  */
 public class Customer extends User{
 	
@@ -17,7 +17,6 @@ public class Customer extends User{
 		super();
 	}
 	
-
 	public Customer(long userId,String name,String mobileNo, Date registrationDate, String customerCategory) {
 		super(userId,name,mobileNo,UserType.CUSTOMER);
 		this.userId = userId;

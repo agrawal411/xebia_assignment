@@ -1,5 +1,8 @@
 package com.xebia.retailstore.util;
 
+/*
+ * Helper class to define values for all the type of discount.
+ */
 public class ConstantHelper {
 	
 	public static final int EMPLOYEE_DISCOUNT=30;

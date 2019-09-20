@@ -1,8 +1,11 @@
 package com.xebia.retailstore.bean;
 
 import java.util.Date;
-
 import com.xebia.retailstore.util.UserType;
+
+/*
+ * Child class to User. Represent user type Employee.  
+ */
 
 public class Employee extends User{
 
@@ -21,21 +24,17 @@ public class Employee extends User{
 		this.userId=userId;
 	}
 
-
 	public String getCategory() {
 		return category;
 	}
-
 
 	public void setCategory(String category) {
 		this.category = category;
 	}
 
-
 	public Date getJoiningDate() {
 		return joiningDate;
 	}
-
 
 	public void setJoiningDate(Date joiningDate) {
 		this.joiningDate = joiningDate;

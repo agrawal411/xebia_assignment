@@ -2,6 +2,10 @@ package com.xebia.retailstore.bean;
 
 import com.xebia.retailstore.util.UserType;
 
+/*
+ * Parent class for all the types of user and contains common attributes to all user types.
+ */
+
 public class User {
 	
 	private long id;
@@ -18,8 +22,6 @@ public class User {
 		this.mobileNo = mobileNo;
 		this.type = type;
 	}
-
-
 
 	public long getId() {
 		return id;

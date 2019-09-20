@@ -2,12 +2,14 @@ package com.xebia.retailstore.service;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
 import com.xebia.retailstore.bean.Item;
 import com.xebia.retailstore.bean.User;
 import com.xebia.retailstore.util.ConstantHelper;
 import com.xebia.retailstore.util.Utility;
 
+/*
+ * This class implements BillCalculator interface and provide discount calculation of for user type Employee.
+ */
 public class EmployeeDiscountCalculation implements BillCalculator{
 
 	public double calculate(List<Item> list,User user) {

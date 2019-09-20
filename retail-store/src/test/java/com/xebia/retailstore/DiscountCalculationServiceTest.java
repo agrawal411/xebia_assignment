@@ -1,27 +1,17 @@
 package com.xebia.retailstore;
 
 import static org.junit.Assert.assertEquals;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
-
-import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.*;
-
 import com.xebia.retailstore.bean.Customer;
 import com.xebia.retailstore.bean.Item;
 import com.xebia.retailstore.bean.User;
 import com.xebia.retailstore.service.AffiliatedDiscountCalculation;
-import com.xebia.retailstore.service.BillCalculator;
-import com.xebia.retailstore.service.CalculatorService;
-import com.xebia.retailstore.service.DiscountPerHundred;
 import com.xebia.retailstore.service.EmployeeDiscountCalculation;
-import com.xebia.retailstore.service.YearBaseDiscount;
+import com.xebia.retailstore.service.CustomerDiscount;
 
 public class DiscountCalculationServiceTest {
 	
@@ -34,7 +24,7 @@ public class DiscountCalculationServiceTest {
 	
 	 String date="10/10/2013";	
 	 User user3=new Customer(3, "user3", "1234567892", null, "new customer");
-     User user4=new Customer(3, "user3", "1234567892", new Date(date), "premium");
+	 User user4=new Customer(3, "user3", "1234567892", new Date(date), "premium");
 	
 	@Mock
 	User user;
@@ -62,7 +52,7 @@ public class DiscountCalculationServiceTest {
 	@Test
 	public void testYearDiscount() {
 		
-		YearBaseDiscount yb=new YearBaseDiscount();
+		CustomerDiscount yb=new CustomerDiscount();
 		double sum=yb.calculate(list,user3);
 		System.out.println(sum);
 		assertEquals(1805.0, sum,1);
@@ -71,7 +61,7 @@ public class DiscountCalculationServiceTest {
 	@Test
 	public void testPerHundredDiscount() {
 		
-		YearBaseDiscount yb=new YearBaseDiscount();
+		CustomerDiscount yb=new CustomerDiscount();
 		double sum=yb.calculate(list,user4);
 		System.out.println(sum);
 		assertEquals(1725.0, sum,1);

@@ -1,20 +1,15 @@
 package com.xebia.retailstore.util;
 
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.Date;
 
 public class Utility {
 	
+	
+	/*
+	 * Function to check whether customer 2 years old or not. 
+	 */
 	public static boolean checkRegistrationDuration(Date date, int years) {
 		
-		/*
-		 * LocalDate ld=LocalDate.now();
-		 * 
-		 * Date
-		 * currentDate=Date.from(ld.atStartOfDay().atZone(ZoneId.systemDefault()).to);
-		 */
 		if(date == null) {
 			return false;
 		}
@@ -30,6 +25,9 @@ public class Utility {
 		return check;
 	}
 
+	/*
+	 * Function to calculate discount applicable to all users -  5$ per 100$ bill
+	 */
 	public static double calculateAdditionalDiscount(double sum) {
 		
 		double discount=0;

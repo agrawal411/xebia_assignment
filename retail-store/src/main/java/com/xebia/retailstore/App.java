@@ -15,7 +15,7 @@ import com.xebia.retailstore.service.BillCalculator;
 import com.xebia.retailstore.service.CalculatorService;
 
 /**
- * Hello world!
+ * Main class to run the application.
  *
  */
 public class App 

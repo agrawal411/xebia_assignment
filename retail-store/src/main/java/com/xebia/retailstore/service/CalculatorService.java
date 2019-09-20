@@ -1,12 +1,12 @@
 package com.xebia.retailstore.service;
 
-
-import com.xebia.retailstore.bean.Customer;
 import com.xebia.retailstore.bean.User;
-import com.xebia.retailstore.util.ConstantHelper;
 import com.xebia.retailstore.util.UserType;
-import com.xebia.retailstore.util.Utility;
 
+/*
+ * This class work as a factory class for all the implementations of BillCalculatior.
+ * It returns object of discount calculator class on the basis of User type.
+ */
 public class CalculatorService {
 	
 	private BillCalculator calc;
@@ -20,14 +20,9 @@ public class CalculatorService {
 			calc=new AffiliatedDiscountCalculation();
 		}
 		else{
-			
-			//if(Utility.checkRegistrationDuration(((Customer) user).getRegistrationDate(),ConstantHelper.NO_OF_YEARS_DISCOUNT_APPLICABLE))
-					calc=new YearBaseDiscount();
+			calc=new CustomerDiscount();
 		}
-		/*
-		 * else { calc=new DiscountPerHundred(); }
-		 */
-				
+			
 		return calc;
 	}
 
